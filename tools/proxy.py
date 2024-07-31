@@ -4,7 +4,7 @@
 #        and run this with `mitmdump -qs tools/proxy.py`
 from __future__ import annotations
 
-domain = "cmyui.xyz"  # XXX: put your domain here
+domain = "shino.buzz"  # Required: put your domain here
 
 import re
 import struct

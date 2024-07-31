@@ -170,12 +170,12 @@ class RankedStatus(IntEnum):
         mapping: Mapping[int, RankedStatus] = defaultdict(
             lambda: cls.UpdateAvailable,
             {
-                -2: cls.Pending,  # graveyard
-                -1: cls.Pending,  # wip
-                0: cls.Pending,
+                -2: cls.Loved,
+                -1: cls.Loved,
+                0: cls.Loved,
                 1: cls.Ranked,
-                2: cls.Approved,
-                3: cls.Qualified,
+                2: cls.Ranked,
+                3: cls.Ranked,
                 4: cls.Loved,
             },
         )
@@ -189,10 +189,10 @@ class RankedStatus(IntEnum):
             lambda: cls.UpdateAvailable,
             {
                 0: cls.Ranked,
-                2: cls.Pending,
-                3: cls.Qualified,
+                2: cls.Ranked,
+                3: cls.Ranked,
                 # 4: all ranked statuses lol
-                5: cls.Pending,  # graveyard
+                5: cls.Loved,  # graveyard
                 7: cls.Ranked,  # played before
                 8: cls.Loved,
             },
@@ -206,10 +206,10 @@ class RankedStatus(IntEnum):
         mapping: Mapping[str, RankedStatus] = defaultdict(
             lambda: cls.UpdateAvailable,
             {
-                "pending": cls.Pending,
+                "pending": cls.Ranked,
                 "ranked": cls.Ranked,
-                "approved": cls.Approved,
-                "qualified": cls.Qualified,
+                "approved": cls.Ranked,
+                "qualified": cls.Ranked,
                 "loved": cls.Loved,
             },
         )
